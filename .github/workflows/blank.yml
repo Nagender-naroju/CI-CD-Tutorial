@@ -12,11 +12,23 @@ jobs:
     steps:
       - name: Testing the test cases
         run: echo "Tests passes successfully"
+  Variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Access Variables
+        run: echo "your name is ${{vars.NAME}}"
+  Secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Access Scerets
+        run: echo "your Surname is ${{secrets.SURNAME}}"
+ 
   Deployment:
     runs-on: ubuntu-latest
     needs: Test
     steps:
       - name: Deploying the code into server
         run: echo "Deployed Sccessfully"
+  
       
       
