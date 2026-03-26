@@ -1,0 +1,10 @@
+# This is name of the workflow
+name: CI|CD Tutorial 
+#This workflow runs on manuall action
+on: workflow_dispatch
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello Step
+        run: echo "Welcome to GitHub actions"
