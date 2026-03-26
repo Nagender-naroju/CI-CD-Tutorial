@@ -1,12 +1,20 @@
-# This is name of the workflow
-name: CI|CD Tutorial 
-#This workflow runs on manuall action
+name: GitHub CI|CD Learning Tutorial
 on: workflow_dispatch
 jobs:
-  hello:
+  build: 
+     runs-on: ubuntu-latest
+     steps:
+       - name: Project Build
+         run: echo "Project Build Is Ready"
+
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello Step
-        run: |
-          echo "Welcome to GitHub actions  first"
-          echo "Welcome to GitHub actions  second"
+      - name: Working on test cases
+        run: echo "Test Passes Successfully"
+
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Project Deployment
+        run: echo "Project Deployed Sccessfully"
