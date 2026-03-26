@@ -9,12 +9,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Working on test cases
         run: echo "Test Passes Successfully"
 
   deployment:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Project Deployment
         run: echo "Project Deployed Sccessfully"
