@@ -1,22 +1,22 @@
-name: GitHub CI|CD Learning Tutorial
+name: GitHub Actions Learning
 on: workflow_dispatch
 jobs:
-  build: 
-     runs-on: ubuntu-latest
-     steps:
-       - name: Project Build
-         run: echo "Project Build Is Ready"
-
-  test:
+  Build:
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Working on test cases
-        run: echo "Test Passes Successfully"
-
-  deployment:
+      - name: Build the code
+        run: echo "Build Sucessfully"
+  Test:
     runs-on: ubuntu-latest
-    needs: test
+    needs: Build
     steps:
-      - name: Project Deployment
-        run: echo "Project Deployed Sccessfully"
+      - name: Testing the test cases
+        run: echo "Tests passes successfully"
+  Deployment:
+    runs-on: ubuntu-latest
+    needs: Test
+    steps:
+      - name: Deploying the code into server
+        run: echo "Deployed Sccessfully"
+      
+      
