@@ -1,34 +1,18 @@
-name: GitHub Actions Learning
+name: CI|CD learning
 on: workflow_dispatch
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build the code
-        run: echo "Build Sucessfully"
+      - name: Project build is getting ready
+        run: echo "Build successfully"
   Test:
     runs-on: ubuntu-latest
-    needs: Build
     steps:
-      - name: Testing the test cases
-        run: echo "Tests passes successfully"
-  Variables:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Access Variables
-        run: echo "your name is ${{vars.NAME}}"
-  Secrets:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Access Scerets
-        run: echo "your Surname is ${{secrets.SURNAME}}"
- 
+      - name: Test the build
+        run: echo "Tests passes sucessfully"
   Deployment:
     runs-on: ubuntu-latest
-    needs: Test
     steps:
-      - name: Deploying the code into server
-        run: echo "Deployed Sccessfully"
-  
-      
-      
+      - name: Pushing the code to vm
+        run: echo "Code Pushed successfully"
