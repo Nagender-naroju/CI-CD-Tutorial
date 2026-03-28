@@ -1,20 +1,23 @@
-name: CI|CD learning
+name: Learning CI|CD
 on: workflow_dispatch
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Project build is getting ready
-        run: echo "Build successfully"
-  Test:
+      - name: Build the project
+        run: echo "Build Completed"
+  test:
     runs-on: ubuntu-latest
-    needs: Build
     steps:
-      - name: Test the build
-        run: echo "Tests passes sucessfully"
-  Deployment:
+      - name: Testing the project
+        run: echo "Test cases passed"
+  deploy:
     runs-on: ubuntu-latest
-    needs: Test
     steps:
-      - name: Pushing the code to vm
-        run: echo "Code Pushed successfully"
+      - name: Deploy the code
+        run: echo "Deployed Successfully"
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify the admin
+        run: echo "Sent notification successfully"
